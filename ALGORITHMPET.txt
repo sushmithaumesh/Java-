@@ -1,0 +1,89 @@
+VIRTUAL PET
+ALGORITHM
+
+•	PetActions.java
+
+1.	Public enum with variables PLAY and SLEEP.
+
+•	PetEnergyLevel.java
+1.	Public enum with variables SLEEPY AND ENERGETIC.
+
+•	Pet.java
+1.	Pet.java is an abstract class.
+2.	It includes  arrayList,List,Scanner,Timer and TimerTask from java.util. And import both enum classes.
+3.	It has two member variables petName which is a private string and petEnergyLevel which is of type PetEnergyLevel enum and is private.
+
+Public Pet(String petName)
+1.	It is default constructor that sets member variables to the value of the variables at that instance using this. And for petEnergyLevel to the enum variable SLEEPY.
+
+Public PetEnergyLevel getPetEnergyLevel()
+1.	Getter of  PetEnergyLevel which returns the energy levels.
+
+Protected void setPetEnergyLevel(PetEnergyLevel petEnergyLevel)
+1.	Sets the pet energy level to the energy level at that instance using this.
+
+Public List<PetActions>presentActions()
+1.	Provides user options options to be performed on the pet.
+2.	An input is taken by the user.
+3.	List implemented by arraylist helps access and insert elements. Petactions is stored in list.
+4.	String petname is equated to getter of petname.
+5.	A switch condition is made where if the getpetenergylevel at the instance is ENERGETIC than a output of petname is energetic is printed.
+6.	The user is input of a number to choose to play or not is taken.
+7.	If user input is 1 than play.
+8.	If case SLEEPY than the user can put the pet to sleep. By inputting 1.
+9.	Than do the same with pet action.
+10.	A separate user interface can also be made to do user actions on pet.
+
+Public string getPetName()
+1.	Returns the pets name.
+
+Public abstract void performAction(PetActions petActions);
+1.	It is a abstract method that performs action on the pet.
+
+Public String toString()
+1.	Using stringbuilder we append the pets info, name and energy level.
+2.	And it returns the string builder.
+
+•	Dog.java
+1.	Extends Pet class and has its own specific attribute.
+2.	Import pet class, and both enums.
+
+Public Dog(string petName)
+1.	Default constructor uses super keyword to call PetName.
+
+Public void performAction(PetActions petActions)
+1.	Return type is void.
+2.	Has a switch statement for petactions if it is PLAY than output is woof woof.
+3.	And energy level is set to sleepy.
+4.	If SLEEP than output is zzzzz and energy level is set to energetic. 
+
+ Public string tostring()
+1.	Returns tostring using super keyword and outputs the pet type.
+
+•	Validator.java
+1.	Returns true if the input is a string and if it contains alphabets.
+2.	Regex=^[a-zA-Z] the string has upper and lower case alphabets.
+
+•	Main.java
+1.import pet,petactions, petenergylevel , validator from util, dog.
+2. a enum is named called supported pet and consists of Dog.
+
+private static String initiateDialogAndGetInput(Scanner scanner)
+1.	Outputs the starting line of application.
+2.	An the user has to input the type of pet.
+3.	Using validator if not equal to validator.validinput(pettype) than it prints incorrect option.
+4.	And exits the program.
+5.	And returns the petType.
+
+private static Pet createPet(Scanner scanner, String petType)
+1.	Prints out the pet user selected and tells user to input the name of the pet.
+2.	And returns the petname.
+
+public void performAction(PetActions petActions)
+1.has a switch statements of pet actions.
+2. if case PLAY output the pet is playing and vice versa for sleeping.
+
+•	In main make a for loop that if Petactions actions is petactions than pet performs action.
+•	Ans output the current energy level.
+•	Than the scanner is closed.
+
